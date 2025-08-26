@@ -1,0 +1,134 @@
+[
+  {
+    "TownName": "Bhimavaram",
+    "CanteenName": ["At Bullock Cart Stand", "At RTC Bus Stand (Wednesday Market )", "R&B Department"]
+  },
+  {
+    "TownName": "Eluru",
+    "CanteenName": ["At SBI", "Rice millers association", "RR Peta", "Tangellamud"]
+  },
+  {
+    "TownName": "Jangareddy Gudem",
+    "CanteenName": ["Beside Municipal office"]
+  },
+  {
+    "TownName": "Narasapuram",
+    "CanteenName": ["Steamer road"]
+  },
+  {
+    "TownName": "Nidadavole",
+    "CanteenName": ["Pangidi Road 27th ward"]
+  },
+  {
+    "TownName": "Palakollu",
+    "CanteenName": ["Besidebustand"]
+  },
+  {
+    "TownName": "Tadepalligudem",
+    "CanteenName": ["At M.R.O office, 8th ward", "Auto Stand Center Near The Municipal Office", "BR Market,14th Ward"]
+  },
+  {
+    "TownName": "Tanuku",
+    "CanteenName": ["OPP.MeeSeva"]
+  },
+  {
+    "TownName": "Bapatla",
+    "CanteenName": ["Municipal School-Mee Seva back side"]
+  },
+  {
+    "TownName": "Chilakaluripet",
+    "CanteenName": ["Clock tower center", "NRT center", "Veterinary hospital"]
+  },
+  {
+    "TownName": "Gudivada",
+    "CanteenName": ["Mahathma Gandhi Municipal Shopping Complex", "Tummala RamaBrahmam Park Premises"]
+  },
+  {
+    "TownName": "Guntur",
+    "CanteenName": [
+      "84- Agriculture Office",
+      "85- ID Hospital Amaravathi Road",
+      "86- Infront of DTC office Premises",
+      "87- Mirchi Yard",
+      "88- Nalla Cheruvu Road near Water tanks",
+      "89- Pallanadu Bus Stand",
+      "91- Raitu Bazar near RTC Bus stand"
+    ]
+  },
+  {
+    "TownName": "Jaggaiahpet",
+    "CanteenName": ["Seetharamapuram Mandal Parshid School"]
+  },
+  {
+    "TownName": "Macherla",
+    "CanteenName": ["Main Road R&B Guest House"]
+  },
+  {
+    "TownName": "Machilipatnam",
+    "CanteenName": ["Water Works Area"]
+  },
+  {
+    "TownName": "MTMC",
+    "CanteenName": ["Near RTC Old Bus stand", "Nulakapeta", "Undavalli", "Secretariat", "High court"]
+  },
+  {
+    "TownName": "Nandigama",
+    "CanteenName": ["Raithu Bazar"]
+  },
+  {
+    "TownName": "Narasaraopet",
+    "CanteenName": ["At Vegetable Market", "PALNADU Bus Stand", "KSR Stadium"]
+  },
+  {
+    "TownName": "Nuzivid",
+    "CanteenName": ["Rural police station"]
+  },
+  {
+    "TownName": "Pedana",
+    "CanteenName": ["Near RTC Bustand"]
+  },
+  {
+    "TownName": "Piduguralla",
+    "CanteenName": ["Macherla-Guntur Main road near Goverment Hospital"]
+  },
+  {
+    "TownName": "Ponnur",
+    "CanteenName": ["Subbaraya Satram"]
+  },
+  {
+    "TownName": "Repalle",
+    "CanteenName": ["Ambedhkar park"]
+  },
+  {
+    "TownName": "Sattenapalle",
+    "CanteenName": ["At MRO Office"]
+  },
+  {
+    "TownName": "Tenali",
+    "CanteenName": ["Market Yard", "near RTC complex", "Near Vegetable Market, opp Municipal Office"]
+  },
+  {
+    "TownName": "Tiruvuru",
+    "CanteenName": ["Opposite Masjid, Main Road, Tiruvuru"]
+  },
+  {
+    "TownName": "Vijayawada",
+    "CanteenName": [
+      "APSRM School",
+      "Ayodhya Nagar",
+      "Bavaji Pet (Gulabi Thota) Near A.S Raju Bridge",
+      "Dharna Chowk",
+      "Gandhi mahila kalasala",
+      "Housing Board colony",
+      "Padamata High School",
+      "Ranigari Thota (CEMENT GODOWN)",
+      "RTC Work Shop Road Vidyadarapuram",
+      "Sai Baba Temple Near Netaji Bridge",
+      "Singh nagar"
+    ]
+  },
+  {
+    "TownName": "Vuyyuru",
+    "CanteenName": ["Sivalayam road old water tank area"]
+  }
+]

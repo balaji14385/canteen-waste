@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            border: 1px solid black;
+            width: 500px;
+            border-radius: 14px;
+            padding: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #sl,
+        #cn {
+            font-size: 18px;
+            height: 30px;
+            border-radius: 7px;
+            width: 230px;
+        }
+
+        .pt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .h3 {
+            margin: 5px 3px;
+
+        }
+
+        .bxx {
+            margin: 15px 0px;
+        }
+
+        .bx {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bx button {
+            width: 150px;
+            height: 40px;
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: aliceblue;
+        }
+
+        .bxx h3 {
+            text-align: center;
+        }
+
+        .fm {
+            padding: 0px 10px;
+        }
+
+        .fm input {
+            width: 100%;
+            height: 30px;
+            font-size: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 7px 0px;
+
+        }
+
+        .fm h3 {
+            margin: 0px;
+        }
+
+        #sbtn {
+            width: 101%;
+            height: 35px;
+            background-color: blue;
+            color: aliceblue;
+        }
+
+        .nn {
+            display: none;
+        }
+
+        #fh3 {
+            margin: 3px 0px;
+            text-align: center;
+            font-size: 30px;
+            color: greenyellow;
+        }
+
+        .cnn {
+            margin: 5px 0px;
+            text-align: center;
+            color: red;
+        }
+
+        .rm {
+            display: none
+        }
+
+        @media(max-width:992px) {
+            .main {
+                border: 1px solid black;
+                width: 290px;
+                border-radius: 14px;
+                padding: 5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            #sl,
+            #cn {
+                font-size: 18px;
+                height: 25px;
+                border-radius: 7px;
+                width: 130px;
+            }
+
+            .pt {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .h3 {
+                margin: 0px 0px;
+                font-size: 17px;
+            }
+
+            .bx button {
+                width: 100%;
+                height: 40px;
+                background-color: blue;
+                border: 1px solid black;
+                border-radius: 10px;
+                color: aliceblue;
+            }
+
+            .bx {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: space-between;
+            }
+
+            .fh {
+                text-align: center;
+                font-size: 17px;
+            }
+
+            #fh3 {
+                margin: 3px 0px;
+                text-align: center;
+                font-size: 20px;
+                color: greenyellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h3 id="hh3" class="cnn rm">The Selected Date Must Be Before Today's Date</h3>
+        <h3 id="hh4" class="cnn rm">The Total Indent Must Be Greater Than Wastage</h3>
+        <div class="pt">
+            <div class="pt1">
+                <h3 class="h3">Select Town Name</h3>
+                <select name="city" id="sl">
+                    <option value="Bapatla">Bapatla </option>
+                    <option value="Bhimavaram">Bhimavaram</option>
+                    <option value="Chilakaluripet">Chilakaluripet </option>
+                    <option value="Eluru">Eluru</option>
+                    <option value="Gudivada">Gudivada </option>
+                    <option value="Guntur">Guntur </option>
+                    <option value="Jangareddy_Gudem">Jangareddy gudem</option>
+                    <option value="Jaggaiahpet">Jaggaiahpet </option>
+                    <option value="MTMC">MTMC </option>
+                    <option value="Macherla">Macherla </option>
+                    <option value="Machilipatnam">Machilipatnam </option>
+                    <option value="Nandigama">Nandigama </option>
+                    <option value="Narasaraopet">Narasaraopet </option>
+                    <option value="Nuzivid">Nuzivid </option>
+                    <option value="Narasapuram">Narasapuram</option>
+                    <option value="Nidadavole">Nidadavole</option>
+                    <option value="Pedana">Pedana </option>
+                    <option value="Piduguralla">Piduguralla</option>
+                    <option value="Ponnur">Ponnur </option>
+                    <option value="Palakollu">Palakollu </option>
+                    <option value="Repalle">Repalle </option>
+                    <option value="Sattenapalle">Sattenapalle </option>
+                    <option value="Tenali">Tenali </option>
+                    <option value="Tiruvuru">Tiruvuru </option>
+                    <option value="Tadepalligudem">Tadepalligudem</option>
+                    <option value="Tanuku">Tanuku </option>
+                    <option value="Vijayawada">Vijayawada </option>
+                    <option value="Vuyyuru">Vuyyuru </option>
+                </select>
+            </div>
+            <div class="pt2">
+                <h3 class="h3">Select Cantten Name</h3>
+                <select name="cantten-name" id="cn">
+                    <option value="Municipal School-Mee Seva back side">Municipal School-Mee Seva back side</option>
+                </select>
+            </div>
+        </div>
+        <div class="bxx">
+            <h3>Select Meal Type</h3>
+            <div class="bx">
+                <button onclick="frm('Breakfast',this)">BreakFast</button>
+                <button onclick="frm('Lunch',this)">Lunch</button>
+                <button onclick="frm('Dinner',this)">Dinner</button>
+
+            </div>
+        </div>
+        <div class="fm nn" id="mm">
+            <form action="https://canteen-waste.onrender.com/" method="post" id="frm">
+                <strong>
+                    <h3 id="fh3"></h3>
+                </strong>
+                <h3 class="fh">Entry The Date </h3>
+                <input type="date" name="Sheetdate" required id="sdate">
+                <h3 class="fh"><label for="meal" id="lb">Total Number Of BreakFast Indent </label></h3>
+                <input type="number" id="meal" name="breakfast" required autocomplete="off">
+                <h3 class="fh"><label for="waste">Total Number Of Wastage </label></h3>
+                <input type="number" id="waste" name="waste" required autocomplete="off">
+                <input type="hidden" name="Townname" value='' id="htn">
+                <input type="hidden" name="Canteenname" value='' id="hcn">
+                <input type="submit" id="sbtn">
+            </form>
+        </div>
+    </div>
+    <script>
+        let Bhimavaram = ['At Bullock Cart Stand', 'At RTC Bus Stand (Wednesday Market )', 'R&B Department']
+        let Eluru = ['At SBI', 'Rice millers association', 'RR Peta', 'Tangellamud']
+        let Jangareddy_Gudem = ['Beside Municipal office']
+        let Narasapuram = ['Steamer road']
+        let Nidadavole = ['Pangidi Road 27th ward']
+        let Palakollu = ['Besidebustand']
+        let Tadepalligudem = ['At M.R.O office, 8th ward', 'Auto Stand Center Near The Municipal Office', 'BR Market,14th Ward']
+        let Tanuku = ['OPP.MeeSeva']
+        let Bapatla = ['Municipal School-Mee Seva back side']
+        let Chilakaluripet = ['Clock tower center', 'NRT center', 'Veterinary hospital']
+        let Gudivada = ['Mahathma Gandhi Municipal Shopping Complex', 'Tummala RamaBrahmam Park Premises']
+        let Guntur = ['84- Agriculture Office', '85- ID Hospital Amaravathi Road', '86- Infront of DTC office Premises', '87- Mirchi Yard', '88- Nalla Cheruvu Road near Water tanks', '89- Pallanadu Bus Stand', '91- Raitu Bazar near RTC Bus stand']
+        let Jaggaiahpet = ['Seetharamapuram Mandal Parshid School']
+        let Macherla = ['Main Road R&B Guest House']
+        let Machilipatnam = ['Water Works Area']
+        let MTMC = ['Near RTC Old Bus stand', 'Nulakapeta', 'Undavalli', 'Secretariat', 'High court']
+        let Nandigama = ['Raithu Bazar']
+        let Narasaraopet = ['At Vegetable Market', 'PALNADU Bus Stand', 'KSR Stadium']
+        let Nuzivid = ['Rural police station']
+        let Pedana = ['Near RTC Bustand']
+        let Piduguralla = ['Macherla-Guntur Main road near Goverment Hospital']
+        let Ponnur = ['Subbaraya Satram']
+        let Repalle = ['Ambedhkar park']
+        let Sattenapalle = ['At MRO Office']
+        let Tenali = ['Market Yard', 'near RTC complex', 'Near Vegetable Market, opp Municipal Office']
+        let Tiruvuru = ['Opposite Masjid, Main Road, Tiruvuru']
+        let Vijayawada = ['APSRM School', 'Ayodhya Nagar', 'Bavaji Pet (Gulabi Thota) Near A.S Raju Bridge', 'Dharna Chowk', 'Gandhi mahila kalasala', 'Housing Board colony', 'Padamata High School', 'Ranigari Thota (CEMENT GODOWN)', 'RTC Work Shop Road Vidyadarapuram', 'Sai Baba Temple Near Netaji Bridge', 'Singh nagar']
+        let Vuyyuru = ['Sivalayam road old water tank area']
+        const sv = document.getElementById('sl')
+        const cn = document.getElementById('cn')
+        var fh3 = document.getElementById('fh3')
+        sl.addEventListener('click', () => { fh3.innerText = `${sv.value} ${cn.value}` })
+        cn.addEventListener('click', () => { fh3.innerText = `${sv.value} ${cn.value}` })
+        sl.addEventListener('click', () => {
+            let arr = sv.value
+            if (arr == 'Bhimavaram') {
+                changecnt(arr, Bhimavaram)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Eluru') {
+                changecnt(arr, Eluru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'MTMC') {
+                changecnt(arr, MTMC)
+                fh3.innerText = `${sv.value} ${cn.value}`
+            }
+            else if (arr == 'Narasaraopet') {
+                changecnt(arr, Narasaraopet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nandigama') {
+                changecnt(arr, Nandigama)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Chilakaluripet') {
+                changecnt(arr, Chilakaluripet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Jangareddy_Gudem') {
+                changecnt(arr, Jangareddy_Gudem)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Narasapuram') {
+                changecnt(arr, Narasapuram)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nidadavole') {
+                changecnt(arr, Nidadavole)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Palakollu') {
+                changecnt(arr, Palakollu)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tadepalligudem') {
+                changecnt(arr, Tadepalligudem)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tanuku') {
+                changecnt(arr, Tanuku)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Bapatla') {
+                changecnt(arr, Bapatla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Gudivada') {
+                changecnt(arr, Gudivada)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Guntur') {
+                changecnt(arr, Guntur)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Jaggaiahpet') {
+                changecnt(arr, Jaggaiahpet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Macherla') {
+                changecnt(arr, Macherla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Machilipatnam') {
+                changecnt(arr, Machilipatnam)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nuzivid') {
+                changecnt(arr, Nuzivid)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Pedana') {
+                changecnt(arr, Pedana)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Piduguralla') {
+                changecnt(arr, Piduguralla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Ponnur') {
+                changecnt(arr, Ponnur)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Repalle') {
+                changecnt(arr, Repalle)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Sattenapalle') {
+                changecnt(arr, Sattenapalle)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tenali') {
+                changecnt(arr, Tenali)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tiruvuru') {
+                changecnt(arr, Tiruvuru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Vijayawada') {
+                changecnt(arr, Vijayawada)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Vuyyuru') {
+                changecnt(arr, Vuyyuru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+        })
+        function changecnt(value, arr) {
+            if (sv.value == value) {
+                cn.innerHTML = ' '
+                arr.forEach((el) => { cn.innerHTML += `<option value="${el}">${el}</option>` })
+            }
+        }
+        const lb = document.getElementById('lb')
+        const mea = document.getElementById('meal')
+        const waste = document.getElementById('waste')
+        const mm = document.getElementById('mm')
+        var btn = document.querySelectorAll('button')
+        var htn = document.getElementById('htn')
+        var hcn = document.getElementById('hcn')
+        var sdate = document.getElementById('sdate')
+        var frm1 = document.getElementById('frm')
+        var hh3 = document.getElementById('hh3')
+        var hh4 = document.getElementById('hh4')
+     frm1.addEventListener('input', () => {
+    let d = new Date();
+    let today = d.toISOString().split('T')[0];
+    let valid = true;
+    if (sdate.value > today) {
+        sdate.style.borderColor = 'red';
+        hh3.classList.remove('rm');
+        valid = false;
+    } else {
+        sdate.style.borderColor = 'black';
+        hh3.classList.add('rm');
+    }
+    if (Number(mea.value) < Number(waste.value)) {
+        mea.style.borderColor = 'red';
+        hh4.classList.remove('rm');
+        valid = false;
+    } else {
+        mea.style.borderColor = 'black';
+        hh4.classList.add('rm');
+    }
+
+    frm1.onsubmit = function(e) {
+        if (!valid) {
+            e.preventDefault();
+            alert("Please fix errors before submitting");
+            return false;
+        }
+        return confirm("Are you sure to submit?");
+    };
+});
+
+        function frm(meal, e) {
+            fh3.innerText = `${sv.value} ${cn.value}`
+            btn.forEach((el) => {
+                el.style.backgroundColor = 'blue'
+                el.style.color = 'white'
+            })
+            e.style.backgroundColor = 'aqua'
+            htn.value = `${sv.value}`
+            hcn.value = `${cn.value}`
+            e.style.color = "black"
+            lb.innerText = `Total Number Of ${meal} Indent`
+            mea.name = `${meal}`
+            waste.name = `${meal}waste`
+            mm.classList.remove('nn')
+        }
+    </script>
+</body>
+
+</html>

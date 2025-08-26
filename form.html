@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .main{
+        border:1px solid black;
+        border-radius:14px;
+        width:500px;
+        padding:10px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+      }
+      .box input{
+       width:100%;
+       height:30px;
+       border:1px solid black;
+       border-radius:10px;
+       margin-bottom:10px;
+       font-size:17px;
+
+      }
+      .box label{
+        font-size:20px;
+        margin-left:5px;
+      }
+      #st{
+         width:100%;
+       height:30px;
+       border:1px solid black;
+       border-radius:10px;
+       margin-bottom:20px;
+       font-size:17px;
+      }
+      #sl,
+        #cn {
+            font-size: 18px;
+            height: 30px;
+            border-radius: 7px;
+            width: 230px;
+        }
+
+        .pt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom:20px;
+        }
+
+        .h3 {
+            margin: 5px 3px;
+
+        }
+          #sbtn {
+            width: 101%;
+            height: 35px;
+            background-color: blue;
+            color: aliceblue;
+        }
+      .h31{
+        font-size:19px;  
+                    margin: 5px 3px;
+
+        }
+
+@media(max-width:500px){
+    .main{
+        border:1px solid black;
+        border-radius:14px;
+        width:fit-content;
+        padding:10px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+      }
+        #sl,
+            #cn {
+                font-size: 18px;
+                height: 25px;
+                border-radius: 7px;
+                width: 130px;
+            }
+
+            .pt {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .h3 {
+                margin: 0px 0px;
+                font-size:17px;
+            }
+}
+    </style>
+</head>
+<body>
+    <form action="https://canteen-waste.onrender.com/operation" method="post" id="fm">
+        <div class="main">
+            <div class="box">
+            <h3 class="h31"><label for="">From-Date</label></h3>
+            <input type="date" name="FromDate" required>
+        </div>
+        <div class="box">
+            <h3 class="h31"><label for="">To-Date</label></h3>
+            <input type="date" name="ToDate">
+        </div>
+        <div class="box">
+             <div class="pt">
+            <div class="pt1">
+                <h3 class="h3">Select Town Name</h3>
+                <select name="Townname" id="sl">
+                    <option value="Bapatla">Bapatla </option>
+                    <option value="Bhimavaram">Bhimavaram</option>
+                    <option value="Chilakaluripet">Chilakaluripet </option>
+                    <option value="Eluru">Eluru</option>
+                    <option value="Gudivada">Gudivada </option>
+                    <option value="Guntur">Guntur </option>
+                    <option value="Jangareddy_Gudem">Jangareddy gudem</option>
+                    <option value="Jaggaiahpet">Jaggaiahpet </option>
+                    <option value="MTMC">MTMC </option>
+                    <option value="Macherla">Macherla </option>
+                    <option value="Machilipatnam">Machilipatnam </option>
+                    <option value="Nandigama">Nandigama </option>
+                    <option value="Narasaraopet">Narasaraopet </option>
+                    <option value="Nuzivid">Nuzivid </option>
+                    <option value="Narasapuram">Narasapuram</option>
+                    <option value="Nidadavole">Nidadavole</option>
+                    <option value="Pedana">Pedana </option>
+                    <option value="Piduguralla">Piduguralla</option>
+                    <option value="Ponnur">Ponnur </option>
+                    <option value="Palakollu">Palakollu </option>
+                    <option value="Repalle">Repalle </option>
+                    <option value="Sattenapalle">Sattenapalle </option>
+                    <option value="Tenali">Tenali </option>
+                    <option value="Tiruvuru">Tiruvuru </option>
+                    <option value="Tadepalligudem">Tadepalligudem</option>
+                    <option value="Tanuku">Tanuku </option>
+                    <option value="Vijayawada">Vijayawada </option>
+                    <option value="Vuyyuru">Vuyyuru </option>
+                </select>
+            </div>
+            <div class="pt2">
+                <h3 class="h3">Select Cantten Name</h3>
+                <select name="Canteenname" id="cn">
+                    <option value="Municipal School-Mee Seva back side">Municipal School-Mee Seva back side</option>
+                </select>
+            </div>
+        </div>
+        </div>
+        <div class="box">
+            <input type="submit" id="sbtn">
+        </div>
+        </div>
+    </form>
+     <script>
+        let Bhimavaram = ['At Bullock Cart Stand', 'At RTC Bus Stand (Wednesday Market )', 'R&B Department']
+        let Eluru = ['At SBI', 'Rice millers association', 'RR Peta', 'Tangellamud']
+        let Jangareddy_Gudem = ['Beside Municipal office']
+        let Narasapuram = ['Steamer road']
+        let Nidadavole = ['Pangidi Road 27th ward']
+        let Palakollu = ['Besidebustand']
+        let Tadepalligudem = ['At M.R.O office, 8th ward', 'Auto Stand Center Near The Municipal Office', 'BR Market,14th Ward']
+        let Tanuku = ['OPP.MeeSeva']
+        let Bapatla = ['Municipal School-Mee Seva back side']
+        let Chilakaluripet = ['Clock tower center', 'NRT center', 'Veterinary hospital']
+        let Gudivada = ['Mahathma Gandhi Municipal Shopping Complex', 'Tummala RamaBrahmam Park Premises']
+        let Guntur = ['84- Agriculture Office', '85- ID Hospital Amaravathi Road', '86- Infront of DTC office Premises', '87- Mirchi Yard', '88- Nalla Cheruvu Road near Water tanks', '89- Pallanadu Bus Stand', '91- Raitu Bazar near RTC Bus stand']
+        let Jaggaiahpet = ['Seetharamapuram Mandal Parshid School']
+        let Macherla = ['Main Road R&B Guest House']
+        let Machilipatnam = ['Water Works Area']
+        let MTMC = ['Near RTC Old Bus stand', 'Nulakapeta', 'Undavalli', 'Secretariat', 'High court']
+        let Nandigama = ['Raithu Bazar']
+        let Narasaraopet = ['At Vegetable Market', 'PALNADU Bus Stand', 'KSR Stadium']
+        let Nuzivid = ['Rural police station']
+        let Pedana = ['Near RTC Bustand']
+        let Piduguralla = ['Macherla-Guntur Main road near Goverment Hospital']
+        let Ponnur = ['Subbaraya Satram']
+        let Repalle = ['Ambedhkar park']
+        let Sattenapalle = ['At MRO Office']
+        let Tenali = ['Market Yard', 'near RTC complex', 'Near Vegetable Market, opp Municipal Office']
+        let Tiruvuru = ['Opposite Masjid, Main Road, Tiruvuru']
+        let Vijayawada = ['APSRM School', 'Ayodhya Nagar', 'Bavaji Pet (Gulabi Thota) Near A.S Raju Bridge', 'Dharna Chowk', 'Gandhi mahila kalasala', 'Housing Board colony', 'Padamata High School', 'Ranigari Thota (CEMENT GODOWN)', 'RTC Work Shop Road Vidyadarapuram', 'Sai Baba Temple Near Netaji Bridge', 'Singh nagar']
+        let Vuyyuru = ['Sivalayam road old water tank area']
+        const sv = document.getElementById('sl')
+        const cn = document.getElementById('cn')
+        var fh3 = document.getElementById('fh3')
+        sl.addEventListener('click', () => { fh3.innerText = `${sv.value} ${cn.value}` })
+        cn.addEventListener('click', () => { fh3.innerText = `${sv.value} ${cn.value}` })
+        sl.addEventListener('click', () => {
+            let arr = sv.value
+            if (arr == 'Bhimavaram') {
+                changecnt(arr, Bhimavaram)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Eluru') {
+                changecnt(arr, Eluru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'MTMC') {
+                changecnt(arr, MTMC)
+                fh3.innerText = `${sv.value} ${cn.value}`
+            }
+            else if (arr == 'Narasaraopet') {
+                changecnt(arr, Narasaraopet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nandigama') {
+                changecnt(arr, Nandigama)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Chilakaluripet') {
+                changecnt(arr, Chilakaluripet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Jangareddy_Gudem') {
+                changecnt(arr, Jangareddy_Gudem)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Narasapuram') {
+                changecnt(arr, Narasapuram)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nidadavole') {
+                changecnt(arr, Nidadavole)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Palakollu') {
+                changecnt(arr, Palakollu)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tadepalligudem') {
+                changecnt(arr, Tadepalligudem)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tanuku') {
+                changecnt(arr, Tanuku)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Bapatla') {
+                changecnt(arr, Bapatla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Gudivada') {
+                changecnt(arr, Gudivada)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Guntur') {
+                changecnt(arr, Guntur)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Jaggaiahpet') {
+                changecnt(arr, Jaggaiahpet)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Macherla') {
+                changecnt(arr, Macherla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Machilipatnam') {
+                changecnt(arr, Machilipatnam)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Nuzivid') {
+                changecnt(arr, Nuzivid)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Pedana') {
+                changecnt(arr, Pedana)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Piduguralla') {
+                changecnt(arr, Piduguralla)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Ponnur') {
+                changecnt(arr, Ponnur)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Repalle') {
+                changecnt(arr, Repalle)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Sattenapalle') {
+                changecnt(arr, Sattenapalle)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tenali') {
+                changecnt(arr, Tenali)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Tiruvuru') {
+                changecnt(arr, Tiruvuru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Vijayawada') {
+                changecnt(arr, Vijayawada)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+            else if (arr == 'Vuyyuru') {
+                changecnt(arr, Vuyyuru)
+                fh3.innerText = `${sv.value} ${cn.value}`
+
+            }
+        })
+        function changecnt(value, arr) {
+            if (sv.value == value) {
+                cn.innerHTML = ' '
+                arr.forEach((el) => { cn.innerHTML += `<option value="${el}">${el}</option>` })
+            }
+        }
+</script>
+</body>
+</script>
+</html>

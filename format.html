@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 700px;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 3px 5px;
+        }
+
+        .sd {
+            padding: 3px 10px;
+        }
+
+        .cn {
+            text-align: start;
+        }
+
+        .sm {
+            padding: 3px 7px;
+        }
+
+        .mn {
+            display: flex;
+            gap:50px;
+        }
+
+        .bx1 {
+            width: 300px;
+            height: 60px;
+            border: 1px solid black;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .bx1 button {
+            width: 100%;
+            height: 40px;
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: aliceblue;
+        }
+ body{
+            position: relative;
+        }
+        .cm {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items:center;
+            position:sticky;
+            top:0px;
+            z-index:0;
+        }
+        .bbr{
+            display:none;
+        }
+        .llr{
+            display:none;
+        }
+        .ddr{
+            display:none;
+        }
+        .vr{
+            padding:1px 1px;
+        }
+        .hell{
+            display:none
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="mn">
+        <div class="bx">
+            <table>
+                <tr>
+                    <th>S.No</th>
+                    <th class="sd">Sheetdate</th>
+                    <th>Townname</th>
+                    <th class="cn">Canteenname</th>
+                    <th class="sm">Break<br>fast</th>
+                    <th class="sm">Break<br>fast<br>waste</th>
+                    <th class="sm">Lunch</th>
+                    <th class="sm">Lunch<br>waste</th>
+                    <th class="sm">Dinner</th>
+                    <th class="sm">Dinner<br>waste</th>
+                </tr>
+                {{%place%}}
+            </table>
+        </div>
+        <div class="cm">
+            <div class="bx1">
+                <button onclick="fd(bf,bfw,'BreakFast',br,'bbr',this)">BreakFast</button>
+                <button onclick="fd(ln,lnw,'Lunch',lr,'llr',this)">Lunch</button>
+                <button onclick="fd(dn,dnw,'Dinner',dr,'ddr',this)">Dinner</button>
+                 <button onclick="overall()">OverAll</button>
+
+
+            </div>
+            <div class="tb1">
+                <table>
+                    <tr>
+                        <th>Meal</th>
+                        <th>No Of Canteen</th>
+                        <th>Total Indent</th>
+                        <th>Total Wastage</th>
+                        <th>Percentage</th>
+                    </tr>
+                  <div id="tr">
+                      <tr id="br" class="vr bbr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="lr" class="vr llr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr><tr id="dr" class="vr ddr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                  </div>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const bf = document.getElementsByClassName('bf')
+        const bfw = document.getElementsByClassName('bfw')
+        const ln = document.getElementsByClassName('ln')
+        const lnw = document.getElementsByClassName('lnw')
+        const dn = document.getElementsByClassName('dn')
+        const dnw = document.getElementsByClassName('dnw')
+        const vr = document.getElementsByClassName('vr')
+        const br = document.getElementById('br')
+        const lr = document.getElementById('lr')
+        const dr = document.getElementById('dr')
+       function overall()
+       {
+        fd(bf,bfw,'BreakFast',br,'bbr')
+        fd(ln,lnw,'Lunch',lr,'llr')
+        fd(dn,dnw,'Dinner',dr,'ddr')
+       }
+
+        function fd(a, b, m, s ,r,t1) {
+            s.classList.remove(r)
+            var bb = s.querySelectorAll('td')
+            var c = 0
+            var t = 0
+            var tt = 0
+            var p = 0
+            for (let v = 0; v < a.length; v++) {
+
+                if (Number(a[v].innerText) != 0) {
+                    c += 1;
+                    t += Number(b[v].innerText)
+                    tt += Number(a[v].innerText)
+                    p = (100 / tt) * t
+                    console.log(tt, t, c)
+                    console.log(p)
+                }
+            }
+            bb[0].innerText = m
+            bb[1].innerText = c
+            bb[2].innerText = tt
+            bb[3].innerText = t
+            bb[4].innerText = p
+        }
+    </script>
+</body>
+
+</html>
