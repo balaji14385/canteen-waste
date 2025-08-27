@@ -42,4 +42,6 @@ const userSchema = new mongoose.Schema({
     default:0
   }
 });
+userSchema.index({ Sheetdate: 1, Townname: 1, Canteenname: 1 }, { unique: true });
 module.exports = mongoose.model('canteen', userSchema);
+
