@@ -54,7 +54,7 @@ app.post('/', async (req, res) => {
     if (d.length == 0) {
       await db.insertMany(alldata(Sheetdate))
     }
-    await db.findOneAndUpdate({ Sheetdate, Townname, Canteenname }, { $set: req.body }, { new: true })
+    await db.findOneAndUpdate({ Sheetdate, Townname, Canteenname }, { $set: req.body }, {upsert: true,new: true })
   }
   catch (err) {
     return res.send(err.message)
@@ -131,5 +131,6 @@ app.post('/date', async (req, res) => {
   }
   catch (err) { return res.send(err.message) }
 })
+
 
 app.listen(5000, () => { console.log('server satarted') })
